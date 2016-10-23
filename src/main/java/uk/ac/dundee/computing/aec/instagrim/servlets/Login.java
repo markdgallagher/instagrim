@@ -29,8 +29,7 @@ import uk.ac.dundee.computing.aec.instagrim.stores.LoggedIn;
 public class Login extends HttpServlet {
 
     Cluster cluster=null;
-
-
+    
     public void init(ServletConfig config) throws ServletException {
         // TODO Auto-generated method stub
         cluster = CassandraHosts.getCluster();
@@ -58,13 +57,13 @@ public class Login extends HttpServlet {
         System.out.println("Session in servlet "+session);
         if (isValid){
             LoggedIn lg= new LoggedIn();
-            lg.setLogedin();
+            lg.setLoggedin();
             lg.setUsername(username);
             //request.setAttribute("LoggedIn", lg);
             
             session.setAttribute("LoggedIn", lg);
             System.out.println("Session in servlet "+session);
-            RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+            RequestDispatcher rd=request.getRequestDispatcher("homeaftlogin.jsp");
 	    rd.forward(request,response);
             
         }else{

@@ -86,7 +86,7 @@ public class PicModel {
             System.out.println("Error --> " + ex);
         }
     }
-
+    
     public byte[] picresize(String picid,String type) {
         try {
             BufferedImage BI = ImageIO.read(new File("/var/tmp/instagrim/" + picid));
@@ -156,7 +156,7 @@ public class PicModel {
         }
         return Pics;
     }
-
+    
     public Pic getPic(int image_type, java.util.UUID picid) {
         Session session = cluster.connect("instagrim");
         ByteBuffer bImage = null;

@@ -1,9 +1,8 @@
 <%-- 
-    Document   : index
-    Created on : Sep 28, 2014, 7:01:44 PM
-    Author     : Administrator
+    Document   : homeaftlogin
+    Created on : 19-Oct-2016, 16:36:43
+    Author     : Mark
 --%>
-
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uk.ac.dundee.computing.aec.instagrim.stores.*" %>
@@ -23,11 +22,12 @@
         </header>
     <center><img src="casablancaending.jpg" align="middle" alt="Louis, I think this is the beginning of a beautiful friendship." style="width:328px;height:240px;"></center>
         <nav>
-            <center><p> "Louis, I think this is the beginning of a beautiful friendship." (Humphrey Bogart, Casablanca) </p></center>
-            <p><i>Register or login now to start uploading!</i></p>
+            <center><p>"Louis, I think this is the beginning of a beautiful friendship." (Humphrey Bogart, Casablanca)</p></center>
             <!--<form action="/Instagrim"> <input type="submit" value="Home" /> </form>-->
-            <form action="register.jsp"> <input type="submit" value="Register" /> </form>
-            <form action="login.jsp"> <input type="submit" value="Login" /> </form>
+            <form action="upload.jsp"> <input type="submit" value="Upload" /> </form>
+            <!--<form action="register.jsp"> <input type="submit" value="Register" /> </form>-->
+            <!--<form action="login.jsp"> <input type="submit" value="Login" /> </form>-->
+            <form action="index.jsp"> <input type="submit" value="Logout" /> </form>
             <ul>
                 
                <!--<li class="footer"><a href="/Instagrim">Home</a></li>-->
@@ -39,7 +39,7 @@
                             String UserName = lg.getUsername();
                             if (lg.getloggedin()) {
                     %>
-                    <!--<li><a href="/Instagrim/Images/<%=lg.getUsername()%>"><%=lg.getUsername()%>'s Images</a></li>-->
+                    <li><a href="/Instagrim/Images/<%=lg.getUsername()%>"><%=lg.getUsername()%>'s Images</a></li>
                     <%}
                             }else{
                                 %>
